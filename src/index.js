@@ -4,6 +4,7 @@ import cors from "cors";
 import { connectDb } from "./config/db.js";
 import authRouter from "./routes/auth.js";
 import paymentsRouter from "./routes/payments.js";
+import adminRouter from "./routes/admin.js";
 
 const PORT = Number(process.env.PORT) || 8080;
 const MONGODB_URI =
@@ -16,6 +17,8 @@ const corsOrigins = process.env.CORS_ORIGINS
       "http://127.0.0.1:1420",
       "http://localhost:5173",
       "http://127.0.0.1:5173",
+      "http://localhost:5175",
+      "http://127.0.0.1:5175",
       "tauri://localhost",
     ];
 
@@ -63,6 +66,7 @@ app.get("/api/paypal/client-id", (_req, res) => {
 
 app.use("/api/auth", authRouter);
 app.use("/api/payments", paymentsRouter);
+app.use("/api/admin", adminRouter);
 
 app.use((err, _req, res, _next) => {
   console.error(err);

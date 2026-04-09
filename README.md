@@ -4,8 +4,9 @@ Express API for email login and PayPal / Razorpay payments, deployable on Vercel
 
 ## Local development
 
-1. Copy `.env.example` to `.env` and set `MONGODB_URI`, `JWT_SECRET`, PayPal and Razorpay keys, and `CORS_ORIGINS` (include your Vite dev origin, e.g. `http://localhost:1420`).
-2. `npm install` and `npm run dev` (or `node src/index.js`).
+1. Copy `.env.example` to `.env` and set `MONGODB_URI`, `JWT_SECRET`, PayPal and Razorpay keys, and `CORS_ORIGINS` (include Tauri `http://localhost:1420` and **YTCRM** `http://localhost:5175` when using the CRM locally).
+2. Set **`ADMIN_EMAIL`** and **`ADMIN_PASSWORD`** for the **YTCRM** admin UI (`/api/admin/*`).
+3. `npm install` and `npm run dev` (or `node src/index.js`).
 
 ## Vercel
 
